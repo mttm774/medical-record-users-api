@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/medical-record-users-api.props" />
+</Project>
