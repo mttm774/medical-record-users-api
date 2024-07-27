@@ -1,0 +1,45 @@
+{
+	"info": {
+		"_postman_id": "36ef0010-fd1a-4968-bafd-778e6b92dfb9",
+		"name": "medical-records",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1347256"
+	},
+	"item": [
+		{
+			"name": "users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{USER_BASE_API}}/api/users",
+					"host": [
+						"{{USER_BASE_API}}"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{USER_BASE_API}}/health",
+					"host": [
+						"{{USER_BASE_API}}"
+					],
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
