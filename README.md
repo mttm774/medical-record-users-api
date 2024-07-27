@@ -64,7 +64,8 @@ $ curl --location 'localhost:8080/health'
 
 1. Firstly, you need to check de folder **postman** inside the root of the project
 
-*image*
+![Screenshot 2024-07-27 at 4 23 00 PM](https://github.com/user-attachments/assets/20de5a42-cf68-4e7b-a476-cac19f804d36)
+
 
 2. You need to open your postman and import all of them, the collection and the two environment but with only one endpoint for Staging and Development in local environment
 
