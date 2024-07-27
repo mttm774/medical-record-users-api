@@ -1,4 +1,3 @@
-version: "3.9"
 services:
   api:
     build:
@@ -6,13 +5,13 @@ services:
       dockerfile: ./medical-record-users-api/Dockerfile
     env_file:
       - ./medical-record-users-api/.env
-    container_name: medical-record-users-api
+    container_name: medical-record-users-staging-api
     ports:
-      - "0.0.0.0:8080:80"
+      - "0.0.0.0:8080:5000"
     volumes:
       - .:/source
     expose:
-      - "80"
+      - "5000"
     networks:
       usersnetwork:
 networks:
