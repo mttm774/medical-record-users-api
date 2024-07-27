@@ -1,0 +1,35 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: ./medical-record-users-api/dev.Dockerfile
+    env_file:
+      - ./medical-record-users-api/.env.dev
+    container_name: medical-record-users-development-api
+    ports:
+      - "0.0.0.0:8080:80"
+    volumes:
+      - .:/source
+    expose:
+      - "80"
+    networks:
+      usersnetwork:
+    links:
+      - db
+    depends_on:
+      - db
+  db:
+    build:
+      context: .
+      dockerfile: ./mssql.Dockerfile
+    ports:
+      - "1434:1433"
+    env_file:
+      - mssql.env
+    volumes:
+      - "./data/mssql_volume:/var/opt/mssql"
+    networks:
+      usersnetwork:
+networks:
+  usersnetwork:
+    driver: bridge

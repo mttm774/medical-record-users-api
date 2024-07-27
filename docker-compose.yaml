@@ -1,0 +1,19 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: ./medical-record-users-api/Dockerfile
+    env_file:
+      - ./medical-record-users-api/.env
+    container_name: medical-record-users-staging-api
+    ports:
+      - "0.0.0.0:8080:5000"
+    volumes:
+      - .:/source
+    expose:
+      - "5000"
+    networks:
+      usersnetwork:
+networks:
+  usersnetwork:
+    driver: bridge

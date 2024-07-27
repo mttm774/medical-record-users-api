@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using medical_record_users_api.Configuration;
 
 namespace medical_record_users_api.DataModel;
 
 public partial class MedicalbdContext : DbContext
 {
+    public IConfigurationRoot configuration;
     public MedicalbdContext()
     {
     }
@@ -13,6 +15,10 @@ public partial class MedicalbdContext : DbContext
     public MedicalbdContext(DbContextOptions<MedicalbdContext> options)
         : base(options)
     {
+        configuration = new ConfigurationBuilder()
+        .SetBasePath(AppContext.BaseDirectory)
+        .AddJsonFile($"appsettings.{Constants.ENVIRONMENT}.json", optional: false, reloadOnChange: true)
+        .Build();
     }
 
     public virtual DbSet<Anexo> Anexos { get; set; }
@@ -74,8 +80,7 @@ public partial class MedicalbdContext : DbContext
     public virtual DbSet<ViewReporteMorbilidad> ViewReporteMorbilidads { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=medical-records-db.database.windows.net;Database=medicalbd;User Id=medicalapi;Password=Miso2024*");
+        => optionsBuilder.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
