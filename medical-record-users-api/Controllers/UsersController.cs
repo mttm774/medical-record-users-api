@@ -23,9 +23,9 @@ namespace medical_record_users_api.Controllers
      
         // GET: api/values
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Usuario>>> GetUsers()
+        public async Task<ActionResult<IEnumerable<Usuario>>> GetUsers(string filter)
         {
-            var users = await context.Usuarios.ToListAsync();
+            var users = await context.Usuarios.Where(u=>u.NumeroDocumento==filter).ToListAsync();
             return Ok(users);
         }
 
@@ -123,6 +123,11 @@ namespace medical_record_users_api.Controllers
                 return NotFound("Patient doesn't find");
             }
         }
+
+
+        
+
+
     }
 }
 
