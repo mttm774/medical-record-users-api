@@ -15,3 +15,9 @@ build:
 
 run:
 	dotnet run --project ./medical-record-users-api/medical-record-users-api.csproj
+
+docker build . -t=medical-record-users-api:1.0.0
+
+docker tag medical-record-users-api:1.0.0 caprilespe/medical-record-users-api:1.0.0
+
+docker push caprilespe/medical-record-users-api:1.0.0

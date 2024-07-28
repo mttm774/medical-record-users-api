@@ -71,3 +71,6 @@ $ curl --location 'localhost:8080/health'
 * **MEDICAL_RECORDS_LOCAL**:
     - You can use this for *Development* environment with a local docker 🐳 database executing the *docker-compose.develop.yml*
     - You also can use this environment for *Staging* environment but in local using the Staging database executing the compose *docker-compose.yml*
+
+* **MEDICAL_RECORDS_STAGING**:
+    - Postman environment that it points to the Azure kubernetes service to the cluster and microservice ingress for staging.
