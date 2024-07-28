@@ -47,14 +47,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{USER_BASE_API}}/api/users/9",
+					"raw": "{{USER_BASE_API}}/api/users/20002",
 					"host": [
 						"{{USER_BASE_API}}"
 					],
 					"path": [
 						"api",
 						"users",
-						"9"
+						"20002"
 					]
 				}
 			},
@@ -101,6 +101,25 @@
 						}
 					}
 				},
+				"url": {
+					"raw": "{{USER_BASE_API}}/api/users/9",
+					"host": [
+						"{{USER_BASE_API}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user",
+			"request": {
+				"method": "DELETE",
+				"header": [],
 				"url": {
 					"raw": "{{USER_BASE_API}}/api/users/9",
 					"host": [

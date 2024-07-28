@@ -109,8 +109,19 @@ namespace medical_record_users_api.Controllers
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task<ActionResult<User>> Delete(int id)
         {
+            var user = await context.Usuarios.FirstOrDefaultAsync<Usuario>(x=>x.Id == id);
+
+            if (user != null)
+            {
+                context.Remove(user);
+                await context.SaveChangesAsync();
+                return NoContent();
+            }
+            else {
+                return NotFound("Patient doesn't find");
+            }
         }
     }
 }
