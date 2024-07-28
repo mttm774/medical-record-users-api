@@ -1,0 +1,60 @@
+###################################
+# medical-record-users-api
+###################################
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: medical-record-users-api
+  labels:
+    app: medical-record-users-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: medical-record-users-api
+  template:
+    metadata:
+      labels:
+        app: medical-record-users-api
+    spec:
+      containers:
+        - name: medical-record-users-api
+          image: caprilespe/medical-record-users-api:1.0.0
+          env:
+            - name: "ASPNETCORE_ENVIRONMENT"
+              valueFrom:
+                configMapKeyRef:
+                  name: users-configmap
+                  key: ASPNETCORE_ENVIRONMENT
+            - name: "ASPNETCORE_URLS"
+              valueFrom:
+                configMapKeyRef:
+                  name: users-configmap
+                  key: ASPNETCORE_URLS
+            - name: "ASPNETCORE_HTTP_PORT"
+              valueFrom:
+                configMapKeyRef:
+                  name: users-configmap
+                  key: ASPNETCORE_HTTP_PORT
+            - name: "DOTNET_CLI_TELEMETRY_OPTOUT"
+              valueFrom:
+                configMapKeyRef:
+                  name: users-configmap
+                  key: DOTNET_CLI_TELEMETRY_OPTOUT
+          ports:
+            - containerPort: 5000
+          imagePullPolicy: Always
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: medical-record-users-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: medical-record-users-api
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000

@@ -1,0 +1,22 @@
+###################################
+# INGRESS
+###################################
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: medical-record-users-ingress
+  labels:
+    name:  medical-record-users-ingress
+spec:
+  rules:
+  - host: medical-record-users-api.local
+    http:
+      paths:
+      - pathType: Prefix
+        path: /
+        backend:
+          service:
+            name: medical-record-users-service
+            port: 
+              number: 5000
