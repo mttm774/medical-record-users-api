@@ -69,24 +69,27 @@ namespace medical_record_users_api.Controllers
 
         // PUT api/values/5
         [HttpPut("{id}")]
-        public async Task<ActionResult<User>> Put(int id, [FromBody]User user)
+        public async Task<ActionResult<User>> Put(int id, [FromBody]Usuario user)
         {
             try {
                 if (user == null) 
                 {
                     return BadRequest("The patient is empty");
                 }
-                var userForUpdate = await context.Users.FirstOrDefaultAsync<User>(x=>x.Id == id);
-                if (userForUpdate == null ) {
-                    return NotFound("Patient doesn't find");
-                }
-                userForUpdate.Email = user.Email;
-                userForUpdate.Estado = user.Estado;
-                userForUpdate.Firma = user.Firma;
-                userForUpdate.Intentos = user.Intentos;
+                user.Id = id;
+                
+                context.Entry(user).State = EntityState.Modified;
                 await context.SaveChangesAsync();
-
-                return CreatedAtAction(nameof(Get), new {id = user.Id}, user);
+            }
+            catch(DbUpdateConcurrencyException) {
+                if (!UserExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
             }
             catch(Exception ex) {
                 Console.WriteLine($"Error: {ex.Message} {ex.StackTrace}");
@@ -95,6 +98,13 @@ namespace medical_record_users_api.Controllers
                     errorMessage = ex.Message
                 });
             }
+
+            return NoContent();
+        }
+
+        private bool UserExists(int id)
+        {
+            return context.Users.Any(e => e.Id == id);
         }
 
         // DELETE api/values/5
