@@ -47,14 +47,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{USER_BASE_API}}/api/users/1",
+					"raw": "{{USER_BASE_API}}/api/users/9",
 					"host": [
 						"{{USER_BASE_API}}"
 					],
 					"path": [
 						"api",
 						"users",
-						"1"
+						"9"
 					]
 				}
 			},
@@ -92,15 +92,24 @@
 			"request": {
 				"method": "PUT",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"TipoDocumento\": \"C\",\n    \"NumeroDocumento\": \"18563026\",\n    \"PrimerApellido\": \"Capriles\",\n    \"SegundoApellido\": \"Morales\",\n    \"PrimerNombre\": \"Pedro\",\n    \"SegundoNombre\": \"Roberto\",\n    \"EstadoCivil\": \"Soltero\",\n    \"FechaNacimiento\": \"1989-05-23\",\n    \"Sexo\": \"M\",\n    \"Ocupacion\": \"Software Engineer\",\n    \"Pais\": \"Venezuela\",\n    \"Departamento\": \"Carabobo\",\n    \"Municipio\": \"Puerto Cabello\",\n    \"BarrioVereda\": \"Cumboto Sur\",\n    \"Zona\": \"1\",\n    \"Direccion\": \"Av. La Paz, Urb. Cumboto Sur, Residencia Villa del Mar, 1ra calle casa número 17\",\n    \"Estrato\": \"3\",\n    \"TelefonoContacto\": \"111111111\",\n    \"TelefonoResidencia\": \"111111111\",\n    \"NombresPadre\": \"Pedro Guzman Capriles Quevedo\",\n    \"NombresMadre\": \"Omaira Capriles Morales Lopez\",\n    \"NombresAcudiente\": \"\",\n    \"TelefonoPadres\": \"111111111\",\n    \"TelefonoAcudiente\": \"\",\n    \"NombreEps\": \"\",\n    \"CodigoEps\": \"\",\n    \"Regimen\": \"\",\n    \"NombreIps\": \"\",\n    \"CodigoIps\": \"\",\n    \"TipoIdentificacionIps\": \"\",\n    \"Discapacidad\": \"\",\n    \"GrupoEtnico\": \"\",\n    \"Observaciones\": \"\",\n    \"Foto\": \"\",\n    \"Email\": \"caprilespe@gmail.com\",\n    \"Estado\": \"A\",\n    \"Localidad\": \"Puerto Cabello\",\n    \"Area\": \"\",\n    \"Posicion\": \"\",\n    \"AceptacionConsentimiento\": \"\",\n    \"AceptacionDatosPersonales\": \"\",\n    \"ParentescoAcudiente\": \"\",\n    \"Recuperacion\": \"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "{{USER_BASE_API}}/api/users/1",
+					"raw": "{{USER_BASE_API}}/api/users/9",
 					"host": [
 						"{{USER_BASE_API}}"
 					],
 					"path": [
 						"api",
 						"users",
-						"1"
+						"9"
 					]
 				}
 			},
