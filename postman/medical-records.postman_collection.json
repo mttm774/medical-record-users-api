@@ -47,14 +47,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{USER_BASE_API}}/api/users/20002",
+					"raw": "{{USER_BASE_API}}/api/users/59377",
 					"host": [
 						"{{USER_BASE_API}}"
 					],
 					"path": [
 						"api",
 						"users",
-						"20002"
+						"59377"
 					]
 				}
 			},
