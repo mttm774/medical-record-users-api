@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Net;
 using medical_record_users_api.DataModel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -30,9 +31,17 @@ namespace medical_record_users_api.Controllers
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<ActionResult<User>> Get(int id)
         {
-            return "value";
+            Console.WriteLine(id);
+            var user = await context.Users.FirstOrDefaultAsync<User>(x=>x.Id == id);
+
+            if (user != null) {
+                return user;
+            }
+            else {
+                return NotFound("User doesn't find");
+            }
         }
 
         // POST api/values
