@@ -46,8 +46,27 @@ namespace medical_record_users_api.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]string value)
+        public async Task<ActionResult<User>> Post([FromBody]User user)
         {
+            Console.WriteLine(user.Email);
+            try {
+                if (user == null) 
+                {
+                    return BadRequest("The user is empty");
+                }
+                context.Users.Add(user);
+                await context.SaveChangesAsync();
+
+                return CreatedAtAction(nameof(Get), new {id = user.Id}, user);
+            }
+            catch(Exception ex) {
+                Console.WriteLine($"Error: {ex.Message} {ex.StackTrace}");
+                return StatusCode(500, new {
+                    message = "Internal server error something is wrong",
+                    errorMessage = ex.Message
+                });
+            }
+
         }
 
         // PUT api/values/5

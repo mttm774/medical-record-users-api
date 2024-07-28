@@ -59,6 +59,33 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Name\": \"Pedro Capriles\",\n    \"UserName\": \"pedro.capriles\",\n    \"Password\": \"18563026\",\n    \"Email\": \"caprilespe@outlook.com\",\n    \"Estado\": \"A\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{USER_BASE_API}}/api/users",
+					"host": [
+						"{{USER_BASE_API}}"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
