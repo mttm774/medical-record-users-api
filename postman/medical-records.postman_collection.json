@@ -67,7 +67,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"Name\": \"Pedro Capriles\",\n    \"UserName\": \"pedro.capriles\",\n    \"Password\": \"18563026\",\n    \"Email\": \"caprilespe@outlook.com\",\n    \"Estado\": \"A\"\n}",
+					"raw": "{\n    \"TipoDocumento\": \"C\",\n    \"NumeroDocumento\": \"18563026\",\n    \"PrimerApellido\": \"Capriles\",\n    \"SegundoApellido\": \"Morales\",\n    \"PrimerNombre\": \"Pedro\",\n    \"SegundoNombre\": \"Roberto\",\n    \"EstadoCivil\": \"Soltero\",\n    \"FechaNacimiento\": \"1989-05-23\",\n    \"Sexo\": \"M\",\n    \"Ocupacion\": \"Software Engineer\",\n    \"Pais\": \"Venezuela\",\n    \"Departamento\": \"Carabobo\",\n    \"Municipio\": \"Puerto Cabello\",\n    \"BarrioVereda\": \"Cumboto Sur\",\n    \"Zona\": \"1\",\n    \"Direccion\": \"Av. La Paz, Urb. Cumboto Sur, Residencia Villa del Mar, 1ra calle casa número 17\",\n    \"Estrato\": \"3\",\n    \"TelefonoContacto\": \"111111111\",\n    \"TelefonoResidencia\": \"111111111\",\n    \"NombresPadre\": \"Pedro Guzman Capriles Quevedo\",\n    \"NombresMadre\": \"Omaira Capriles Morales Lopez\",\n    \"NombresAcudiente\": \"\",\n    \"TelefonoPadres\": \"111111111\",\n    \"TelefonoAcudiente\": \"\",\n    \"NombreEps\": \"\",\n    \"CodigoEps\": \"\",\n    \"Regimen\": \"\",\n    \"NombreIps\": \"\",\n    \"CodigoIps\": \"\",\n    \"TipoIdentificacionIps\": \"\",\n    \"Discapacidad\": \"\",\n    \"GrupoEtnico\": \"\",\n    \"Observaciones\": \"\",\n    \"Foto\": \"\",\n    \"Email\": \"caprilespe@outlook.com\",\n    \"Estado\": \"A\",\n    \"Localidad\": \"Puerto Cabello\",\n    \"Area\": \"\",\n    \"Posicion\": \"\",\n    \"AceptacionConsentimiento\": \"\",\n    \"AceptacionDatosPersonales\": \"\",\n    \"ParentescoAcudiente\": \"\",\n    \"Recuperacion\": \"\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -82,6 +82,25 @@
 					"path": [
 						"api",
 						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{USER_BASE_API}}/api/users/1",
+					"host": [
+						"{{USER_BASE_API}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"1"
 					]
 				}
 			},
