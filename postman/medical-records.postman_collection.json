@@ -40,6 +40,25 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{USER_BASE_API}}/api/users/1",
+					"host": [
+						"{{USER_BASE_API}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
