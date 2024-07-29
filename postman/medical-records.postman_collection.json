@@ -7,23 +7,24 @@
 	},
 	"item": [
 		{
-			"name": "users",
+			"name": "GetUsersByDocument",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{USER_BASE_API}}/api/users?filter=18563026",
+					"raw": "{{USER_BASE_API}}/api/users/GetUsersByDocument?filter=870605512",
 					"host": [
 						"{{USER_BASE_API}}"
 					],
 					"path": [
 						"api",
-						"users"
+						"users",
+						"GetUsersByDocument"
 					],
 					"query": [
 						{
 							"key": "filter",
-							"value": "18563026"
+							"value": "870605512"
 						}
 					]
 				}
