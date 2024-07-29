@@ -23,9 +23,18 @@ namespace medical_record_users_api.Controllers
      
         // GET: api/values
         [HttpGet]
+        [Route("GetUsersByDocument")]
         public async Task<ActionResult<IEnumerable<Usuario>>> GetUsers(string filter)
         {
             var users = await context.Usuarios.Where(u=>u.NumeroDocumento==filter).ToListAsync();
+            return Ok(users);
+        }
+
+        // GET: api/values
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Usuario>>> GetUsers()
+        {
+            var users = await context.Usuarios.ToListAsync();
             return Ok(users);
         }
 
