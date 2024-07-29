@@ -12,13 +12,19 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{USER_BASE_API}}/api/users",
+					"raw": "{{USER_BASE_API}}/api/users?filter=18563026",
 					"host": [
 						"{{USER_BASE_API}}"
 					],
 					"path": [
 						"api",
 						"users"
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "18563026"
+						}
 					]
 				}
 			},

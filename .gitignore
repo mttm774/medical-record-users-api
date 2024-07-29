@@ -343,3 +343,4 @@ obj/
 bin/
 .env
 data
+.DS_Store
