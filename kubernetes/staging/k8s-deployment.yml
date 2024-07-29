@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: medical-record-users-api
-          image: caprilespe/medical-record-users-api:2.0.0
+          image: caprilespe/medical-record-users-api:3.0.0
           env:
             - name: "ASPNETCORE_ENVIRONMENT"
               valueFrom:
